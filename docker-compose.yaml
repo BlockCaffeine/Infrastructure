@@ -6,10 +6,10 @@ services:
       dockerfile: ../Jurassip/Dockerfile
       context: ../Jurassip
     environment:
-      - SERIAL_PORT_NAME="/dev/ttyAMA2"
-      - SERIAL_BAUD_RATE="9600"
-      - GRPC_SERVER_HOST="0.0.0.0"
-      - GRPC_SERVER_PORT="50051"
+      - SERIAL_PORT_NAME=/dev/ttyAMA2
+      - SERIAL_BAUD_RATE=9600
+      - GRPC_SERVER_HOST=0.0.0.0
+      - GRPC_SERVER_PORT=50051
     networks:
       - blockcaffeine
     volumes:
@@ -23,10 +23,10 @@ services:
       dockerfile: ../Anteiku/Dockerfile
       context: ../Anteiku
     environment:
-      - GRPC_SERVER_HOST="jurassip"
-      - GRPC_SERVER_PORT="50051"
-      - BLOCKCHAIN_RPC_URL="https://fortuna.informatik.uni-mannheim.de:32779"
-      - CONTRACT_ADDRESS="0xfA87eB3A4a16D9df4FFdC9167EC4E24BA3382c57"
+      - GRPC_SERVER_HOST=jurassip
+      - GRPC_SERVER_PORT=50051
+      - BLOCKCHAIN_RPC_URL=https://fortuna.informatik.uni-mannheim.de:32779
+      - CONTRACT_ADDRESS=0xfA87eB3A4a16D9df4FFdC9167EC4E24BA3382c57
     networks:
       - blockcaffeine
     restart: unless-stopped
