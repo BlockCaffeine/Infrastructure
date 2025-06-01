@@ -1,4 +1,4 @@
-orion.informatik.uni-mannheim.de {
+blockcaffeine.de {
     reverse_proxy espressos:3000
     tls {
 		  dns cloudflare {env.CLOUDFLARE_API_TOKEN}
