@@ -43,7 +43,8 @@ services:
     restart: unless-stopped
 
   caddy:
-    image: caddy:2.10.0
+    build:
+      dockerfile: ./caddy/Dockerfile
     container_name: caddy
     volumes:
       - ./caddy/Caddyfile:/etc/caddy/Caddyfile:ro
