@@ -27,17 +27,19 @@ services:
       - GRPC_SERVER_HOST=jurassip
       - GRPC_SERVER_PORT=50051
       - BLOCKCHAIN_RPC_URL=https://fortuna.informatik.uni-mannheim.de:32779
-      - CONTRACT_ADDRESS=0xfA87eB3A4a16D9df4FFdC9167EC4E24BA3382c57
+      - CONTRACT_ADDRESS=0xC495f6FF1912FB7cC33C65c3f8542aE78044D3C0
     networks:
       - blockcaffeine
     restart: unless-stopped
 
   espressos:
-    image: espressos:v0.1.0
+    image: espressos:v0.2.0
     container_name: espressos
     build:
       dockerfile: ../EspressOS/Dockerfile
       context: ../EspressOS      
+    environment:
+      - PUBLIC_CAFEREUM_ADDRESS=0xC495f6FF1912FB7cC33C65c3f8542aE78044D3C0
     networks:
       - blockcaffeine
     restart: unless-stopped
